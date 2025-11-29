@@ -2,3 +2,9 @@
 title = "Hardware acceleration for neural network inference"
 authors = ["Matias Silva"]
 language = "en"
+
+[build]
+extra-watch-dirs = ["circuits"]
+
+[preprocessor.digitaljs]
+command = "python3 preprocessors/digitaljs.py"

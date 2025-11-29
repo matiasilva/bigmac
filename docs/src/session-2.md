@@ -130,9 +130,28 @@ circuits.
 All logic gates implement one boolean function. These are circuits, after all,
 so it's useful to have symbols for them:
 
-<p style="text-align:center"><img src="gates.jpeg"></p>
+<p style="text-align:center;"><img style="max-width: 80%" src="gates.jpeg"></p>
 
-## Synchronous logic
+You might imagine a simple logic function like `(A AND B) OR NOT C` can be
+represented as such:
+
+{{#circuit circuits/s2-c1.json}}
+
+> [!TIP]
+>
+> Feel free to mess about with the circuit above!
+
+## Combinational logic
+
+Combinational logic is formed from boolean functions whose outputs are fully
+determined by their current inputs. You can achieve quite complex operations
+using just combinational logic and clever tricks to manipulate bits. These
+operations execute in zero time, ie. in under 1 clock cycle.
+
+At the lowest level, combinational circuits are built from simple primitives
+such as NAND gates (in ASIC designs) or LUTs (in FPGA designs). We'll get to
+these later; for now, you just need an awareness that how your logic functions
+are implemented will vary depending on the platform (ASIC or FPGA).
 
 > [!NOTE]
 >
@@ -141,22 +160,44 @@ so it's useful to have symbols for them:
 > that you might build out of gates, to the HDL code you write and so on. It's a
 > general term for _the thing that your circuit will do_.
 
-## Combinational vs. Sequential
+## Sequential logic
 
-Combinational logic is formed from boolean functions whose outputs are fully
-determined by their current inputs. They can execute in 0 time, with no clock
-delay.
+So far, we've seen that we can evaluate arbitrary boolean functions using logic
+gates. However, any meaningful and useful computing system needs a bit more, in
+particular it needs to store previous values so it can use them in future
+computations.
 
-This is in contrast to sequential logic, where the outputs are a function of
-their current and previous inputs. Any meaningful and useful computing system
-has some kind of short-term memory that allows it to store a previous input. You
-might see this "memory" (please don't ever call it that) referred to as a
-register or a flip-flop, of which there are several types.
+The notion of 'previous' and 'current' require a concept of time. This is called
+synchronous logic. We say that our circuit is _synchronous to_ a clock, ie. it
+responds to the clock, most commonly a rising edge (positive edge). A clock
+signal is a simple square wave with a 50% duty cycle. It is on for 50% of the
+period and off for the other half.
 
-At the lowest level, combinational circuits are built from simple primitives
-such as NAND gates (in ASIC designs) or LUTs (in FPGA designs). We'll get to
-these later; for now, an awareness that how your logic functions are implemented
-will vary depending on the platform (ASIC or FPGA).
+Tying all this together, we arrive at sequential logic circuits, where the
+outputs are a function of their current and previous inputs. Flip-flops, also
+called registers, are used to accomplish this. The simplest flop is a D-flip
+flop, as shown.
+
+<p style="text-align:center"><img style="max-width: 40%" src="dflop.png"></p>
+
+The component above has 3 inputs: clock, `d` and reset. It has one output `q`.
+Sometimes, you get an additional output which is the inverted version of `Q`,
+since it falls out naturally out of the transistor implementation of a D-flop.
+
+One way to visualize sequential logic circuits is with waveform diagrams, as
+below.
+
+<p style="text-align:center"><img src="s2-c2.svg"></p>
+
+On the 2nd positive edge of the clock, the input to the flop goes high. The
+output, however, remains unchanged. One clock cycle later, the flop's output
+matches its previous input. Aha, we've got 1 cycle's worth of "memory"!.
+
+This diagram exposes a key understanding of synchronous logic: launching and
+sampling/capturing. We say that `d` is launched on the 2nd clock edge but only
+sampled by the flop on the 3rd positive edge. This diagram makes that a bit
+clearer by drawing the 0->1 transition of `d` slightly after the positive edge.
+In reality, things are more complicated.
 
 ## Glossary
 
