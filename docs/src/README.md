@@ -42,3 +42,12 @@ Your neural network will be a digit classifier. This is the equivalent of ‘Hel
 World’ in the AI world. A digit classifier takes an image as an input and
 outputs 10 numbers, each representing a probability that the image corresponds
 to a particular number.
+
+## Useful links
+
+* https://course.fast.ai/Lessons/lesson8.html
+* https://www.deeplearningbook.org/lecture_slides.html
+* http://neuralnetworksanddeeplearning.com/chap6.html
+* https://distill.pub/
+* https://colah.github.io/
+* 3B1B
