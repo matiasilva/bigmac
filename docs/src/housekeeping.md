@@ -61,6 +61,10 @@ A few more tips:
   like-minded people with the same interests as you. Sounds great, right? Well,
   that's exactly what our classroom is! Please share ideas, thoughts, questions
   and more with the group. Nothing is worth feeling embarrassed.
+- **Embrace discomfort.** I will introduce ideas you will never have heard of
+  and it will all seem quite complicated at first. This is fine and intentional.
+  I find that learning works best when you're thrown in the deep end, made to
+  swim in the ocean as it were.
 
 And lastly, I will repeat: **do not be afraid to ask questions**! Interrupt me,
 please. You may have heard this several times before but I'll repeat it again:
