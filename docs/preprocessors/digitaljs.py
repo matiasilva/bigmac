@@ -8,7 +8,7 @@ def process_content(content):
         json_path = match.group(1).strip()
         circuit_id = f"circuit-{hash(json_path) % 10000}"
 
-        return f'''
+        return f"""
   <div id="{circuit_id}"></div>
   <script>
     (function() {{
@@ -21,7 +21,7 @@ def process_content(content):
         .catch(err => console.error('Failed to load circuit:', err));
     }})();
   </script>
-'''
+"""
 
     return re.sub(r"\{\{#circuit\s+(.+?)\}\}", replace_circuit, content)
 
