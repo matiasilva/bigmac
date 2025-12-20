@@ -9,8 +9,14 @@ memory and compute demands.
 Make no mistake, these are not software companies. According to some, software
 engineers will evolve to become AI supervisors, merely inspecting and validating
 the output of AI agents. Hardware engineers on the other hand must understand
-Physics, Computer Architecture and Electronics to create — this set of skills
+physics, computer architecture and electronics to create — this set of skills
 can never be replaced, only augmented.
+
+If that's not enough to make you jump out of bed or if you're a diehard softie,
+there's the ever famous quote by Alan Kay, inventor of OOP and window-based
+GUIs:
+
+> People who are really serious about software should make their own hardware.
 
 ## Course objective
 
