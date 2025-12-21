@@ -51,6 +51,15 @@ to a particular number.
 
 You'll also write a report that conforms to the CREST Gold guidelines
 
+## Copyright
+
+All code is MIT licensed. All text is
+[CC BY NC SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/). Figures
+are mine unless appropriately sourced.
+
+If you'd like to make use of any material here, please contact me at
+`matias@matiasilva {dot} com`. I'm happy to chat!
+
 ## Useful links
 
 - <https://course.fast.ai/Lessons/lesson8.html>

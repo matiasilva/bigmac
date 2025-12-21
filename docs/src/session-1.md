@@ -54,9 +54,22 @@ HDL
 : Hardware description language. As the name implies, it _describes_ how hardware is laid out and connected. I cannot emphasize how different it is from software.
 <!-- prettier-ignore-end -->
 
-But anyway, what's a chip?
+But anyway, what's a chip? A chip is just a big circuit that does _something_.
+They're the "pro"" version of the breadboard constructions that we're all used
+to making, operating under a completely different set of constraints due to
+their manufacturing process. An ASIC might do one thing really well or it might
+have a whole host of features that in unison carry out a really complex
+function.
 
-FIXME: fill this in!
+ASICs contain physical logic gates, these are the semi-fundamental building
+blocks. The gates together execute logic functions, like `A and (B or C)`, where
+`A`, `B`, `C` are all digital inputs with some meaning we assign to them.
+
+> [!NOTE]
+>
+> Certain manufacturing processes might use only one type of gate, like NAND.
+> Any arbitrary logic function can be made to use NAND operations (DeMorgan's
+> rule).
 
 The key piece of intuition here is to grasp the layers of abstraction involved.
 Very roughly, the layers are:
@@ -139,6 +152,10 @@ netlist of actual logic gates. The tool chooses from a library of standard cells
 (NAND, NOR, flip-flops, etc.) to implement our design while optimizing for area,
 power, and timing.
 
+> [!TIP]
+>
+> You'll see the words power, performance and area a lot. This is called PPA.
+
 **5. Place and Route (P&R)**
 
 Here's where things get physical. The P&R tool takes the netlist and actually
@@ -177,16 +194,34 @@ silicon.
 
 ## Tools
 
-The chip design ecosystem relies on a suite of specialized Electronic Design
-Automation (EDA) tools. Here's what you'll encounter:
+Becoming familiar with the tools, both commercial and open source, is a must.
+Here's a few to remember...
 
-**Hardware Description Languages**
+### HDLs
+
+Not tools per se but the choice of HDL determines the tools available to you.
+Advanced tools will have multiple frontends that can parse different HDLs and
+translate them into some intermediate representation.
+
+The most common HDL is SystemVerilog. Verilog and SystemVerilog used to be
+different languages but were merged in the IEEE 1800-2009 standard. You might
+hear references to Verilog 2001 compatible code, since it's pretty much
+guaranteed to work with all EDA tools. This refers to the subset of
+SystemVerilog features available in the IEEE Standard 1364-2001.
+
+> [!TIP]
+>
+> Why are some features of SystemVerilog not available or implemented by all
+> tools? The reality is that the specification of the language and its
+> implementation are two different tasks, with somewhat competing priorities.
 
 - **Verilog/SystemVerilog**: The most widely used HDL in industry. C-like
   syntax, supports both behavioral and structural descriptions
 - **VHDL**: More verbose but strongly typed. Common in aerospace and defense
-- **Chisel**: A modern HDL embedded in Scala, gaining traction for its powerful
-  abstraction capabilities
+
+There's a different set of languages, specifically DSLs (domain specific
+languages) that enable a different kind of hardware development. These are
+so-called high-level HDLs and include Chisel and Amaranth.
 
 **Simulation and Verification**
 
@@ -243,6 +278,11 @@ Once your user is set up, you can log in over SSH:
 ```bash
 ssh <user>@<edaserver>
 ```
+
+> [!TIP]
+>
+> Windows users might want to use
+> [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
 
 You'll then be handed a shell, into which you can type anything! Try this:
 
