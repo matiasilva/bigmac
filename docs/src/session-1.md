@@ -98,6 +98,61 @@ higher speed than in simulation. While ASICs and FPGAs provide us with two
 different ways of executing these functions, underneath it all, they are still
 the same logic functions.
 
+## Example: an inverter
+
+Let's use an example to tie these concepts together, namely that of an inverter.
+An inverter takes a logical input signal and produces its complement; a 1
+becomes a 0 and a 0 becomes a 1. In boolean algebra, you'll commonly see a
+horizontal bar placed above a variable while in code you'll often see an
+exclamation mark (!) placed before a variable to indicate its inversion.
+
+So, at the logic gate level of abstraction, we have the following:
+
+<p style="text-align:center"><img style="max-width: 20%" src="inverter.png"></p>
+
+> [!NOTE]
+>
+> The bottom-most symbol is a buffer, a close sibling of the inverter. It simply
+> produces the same logic level as seen on its input.
+
+Going down one level of abstraction means implementing this logic function with
+transistors. This can be neatly done using CMOS (Complimentary Metal-Oxide
+Semiconductor Field Effect Transistor) technology by placing an NMOS transistor
+after a PMOS and taking the output from the PMOS-NMOS junction.
+
+<p style="text-align:center"><img style="max-width: 30%" src="inverter-cmos.png"></p>
+
+> [!NOTE]
+>
+> Recall that a MOSFET has a drain, a gate and a source. Conduction from the
+> drain to the source occurs when `V_gate - V_source` exceeds or is below a
+> certain threshold. PMOS transistors have an n-type channel while NMOS
+> transistors have a p-type channel.
+>
+> This means that for PMOS, `V_gs` must be negative and below the threshold
+> while for NMOS it must be positive and above the threshold. In NMOS
+> transistors, electrons flow while in PMOS transistors it is helpful to think
+> of holes flowing. Refer to
+> [Veritasium's video](https://www.youtube.com/watch?v=IcrBqCFLHIY) on
+> transistors for more information.
+
+In this arrangement, a PMOS transistor has its source connected to a positive
+supply and its drain connected to the drain of an NMOS whose source is grounded.
+The gates of both transistors are connected to a single input `V_in`. Let's
+observe the circuit behavior with our two state input:
+
+1. When the input is low, `V_gs` of the NMOS is below 0.7 (typical threshold)
+   while that of the PMOS is deeply negative and below its threshold of -0.7
+   (PMOS thresholds are negative). PMOS is conducting while NMOS is not.
+2. By the same logic as above, the PMOS stops conducting when the input goes
+   high and `V_gs` becomes positives and above its threshold. NMOS starts
+   conducting, tying the output to ground.
+
+<!-- // {{#circuit circuits/s1-c1.json}} -->
+
+Of course, there still exists one more layer of abstraction but that is left as
+an exercise to the reader.
+
 ## An odd analogy
 
 Over the years, I've really found the house analogy useful when drawing
@@ -223,39 +278,39 @@ There's a different set of languages, specifically DSLs (domain specific
 languages) that enable a different kind of hardware development. These are
 so-called high-level HDLs and include Chisel and Amaranth.
 
-**Simulation and Verification**
+### Simulation and Verification
 
 - **Verilator**: Fast, open-source Verilog simulator that compiles to C++
 - **ModelSim/QuestaSim**: Industry-standard commercial simulators from Siemens
 - **VCS**: Synopsys's commercial simulator, widely used in industry
 - **Icarus Verilog**: Open-source Verilog simulator, good for learning
 
-**Synthesis**
+### Synthesis
 
 - **Yosys**: Open-source synthesis tool, excellent for FPGA and ASIC flows
 - **Synopsys Design Compiler**: Industry standard commercial synthesis tool
 - **Cadence Genus**: Another major commercial synthesis platform
 
-**FPGA Tools**
+### FPGA Tools
 
 - **Vivado**: Xilinx's (now AMD) complete FPGA design suite for their devices
 - **Quartus**: Intel's (formerly Altera) FPGA toolchain
 - **nextpnr/Project IceStorm**: Open-source FPGA place and route tools
 
-**Place and Route (ASIC)**
+### Place and Route
 
 - **Cadence Innovus**: Leading commercial P&R tool
 - **Synopsys ICC2**: Another major commercial option
 - **OpenROAD**: Emerging open-source ASIC flow
 
-**Waveform Viewers**
+### Waveform Viewers
 
 - **GTKWave**: Open-source waveform viewer, works with VCD files from any
   simulator
-- **Verdi**: Synopsys's advanced debug platform
 - **Simvision**: Cadence's waveform viewer
+- **Surfer**: Leading open-source option for waveform viewing
 
-**Formal Verification**
+### Formal Verification
 
 - **SymbiYosys**: Open-source formal verification tool built on Yosys
 - **JasperGold**: Cadence's commercial formal verification platform
@@ -263,6 +318,15 @@ so-called high-level HDLs and include Chisel and Amaranth.
 The tools in this course will give you a solid foundation in chip design and set
 you on the right track to working with commercial EDA tools, since the former
 takes inspiration from the latter (the good bits, at least).
+
+## Homework
+
+1. Generate a public SSH key and send it to me
+2. Try and SSH into the shared server
+3. Download a VNC client and ensure you can access the desktop environment. Make
+   sure to configure your own VNC access beforehand.
+4. Read through Session 1 to recap content delivered in this session
+5. Install the VS Code editor and the remote work extension
 
 ## Accessing the shared teaching server
 

@@ -59,12 +59,3 @@ are mine unless appropriately sourced.
 
 If you'd like to make use of any material here, please contact me at
 `matias@matiasilva {dot} com`. I'm happy to chat!
-
-## Useful links
-
-- <https://course.fast.ai/Lessons/lesson8.html>
-- <https://www.deeplearningbook.org/lecture_slides.html>
-- <http://neuralnetworksanddeeplearning.com/chap6.html>
-- <https://distill.pub/>
-- <https://colah.github.io/>
-- 3B1B

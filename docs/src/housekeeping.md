@@ -12,6 +12,19 @@ course, including:
 - yosys for synthesis
 - Gowin (FPGA vendor) tools
 
+You will use version control (Git) to manage your codebase in your local area.
+
+### VNC port to student mapping
+
+| Username | Display | Port |
+| -------- | ------- | ---- |
+| neil     | :2      | 5902 |
+| iris     | :3      | 5903 |
+| brandon  | :4      | 5904 |
+| zita     | :5      | 5905 |
+| michael  | :6      | 5906 |
+| henry    | :7      | 5907 |
+
 ## Editor
 
 We will use the VSCode Editor with the Remote SSH plugin to work on files hosted
@@ -79,6 +92,11 @@ A few more tips:
   I find that learning works best when you're thrown in the deep end, made to
   swim in the ocean as it were.
 
+- **Try first, then ask**. You will have to do things you have not done before.
+  This is a fact of learning and I will deliberately put you in these
+  situations. I expect you to use available resources to solve problems and ask
+  me only as a last resort.
+
 And lastly, I will repeat: **do not be afraid to ask questions**! Interrupt me,
 please. You may have heard this several times before but I'll repeat it again:
 if you've got a question, chances are someone has the same one too. Do us all a
@@ -103,3 +121,10 @@ cascade effect.
 
 A glossary of terms is included at the end of each session to help you in report
 writing and to avoid any use of imprecise language.
+
+## LLM policy
+
+Use of LLMs is highly encouraged as is using resources from outside the course
+or those I have recommended. If you find something useful, please share it with
+the class. For completing homework and the final project, all work must be your
+own.
