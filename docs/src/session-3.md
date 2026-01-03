@@ -60,3 +60,43 @@ endmodule
 > 1. Add sequential logic that achieves the desired functionality.
 > 2. Extend the code to output a signal when the counter has overflowed.
 > 3. Use a full adder to draw a circuit diagram for your answer to 1.
+
+---
+
+4. This question is about synchronous circuit design.
+
+> [!NOTE]
+>
+> Answers to this question will count towards session 2 credits.
+
+You are tasked with creating a 3-bit Gray code counter with T flip-flops and
+some combinational logic.
+
+A T flip-flop is a different kind of flop to the D-flop we've been introduced to
+so far. It has a toggling output when its input is 1 and holds its previous
+output when the input is 0. This property makes it very useful for counter
+design.
+
+Gray code is a number scheme in which consecutive numbers differ by only one
+bit. The full 3 bit Gray code sequence is available below:
+
+```
+000 -> 001 -> 011 -> 010 -> 110 -> 111 -> 101 -> 100 -> 000
+```
+
+> 1. Write down the number of T-flops required to represent a 3-bit Gray code
+>    value.
+> 1. Produce the excitation table for the T flip-flop.
+>
+> An excitation table contains the minimum inputs required to generate the next
+> state given a current state. The three columns should be, in order, `Q`,
+> `Q_next` and `T`, where `T` is the input to the T-flop.
+>
+> 1. Determine the inputs required to the T-flops to achieve the state
+>    transitions required by the Gray code sequence
+> 1. Using K-maps or otherwise, determine the combinational logic circuits
+>    required to generate the correct T-flop inputs
+> 1. Draw out the final circuit you have designed
+
+Hint: think of the output of the T-flops as representing the current state. The
+inputs to the T-flops are determined by the state.
