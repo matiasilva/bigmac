@@ -24,6 +24,7 @@ You will use version control (Git) to manage your codebase in your local area.
 | zita     | :5      | 5905 |
 | michael  | :6      | 5906 |
 | henry    | :7      | 5907 |
+| lawrence | :8      | 5908 |
 
 ## Editor
 

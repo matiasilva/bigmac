@@ -1,4 +1,4 @@
-# Foreward
+# Foreword
 
 17 years ago, I picked up my first Lego brick. 14 years ago, I built my first
 [K'nex tower](https://www.basicfun.com/knex/). 10 years ago, I wrote my first
