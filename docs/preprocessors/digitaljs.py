@@ -38,7 +38,8 @@ def main():
 
     # we've been invoked a second time by mdbook
     context, book = json.load(sys.stdin)
-    chapters = [c["Chapter"] for c in book["items"]]
+    # list is mixed content; separators are added as strs
+    chapters = [c["Chapter"] for c in book["items"] if not isinstance(c, str)]
     for chapter in chapters:
         chapter["content"] = process_content(chapter["content"])
     json.dump(book, sys.stdout)
