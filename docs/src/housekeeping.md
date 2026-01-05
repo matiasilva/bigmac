@@ -96,7 +96,8 @@ A few more tips:
 - **Try first, then ask**. You will have to do things you have not done before.
   This is a fact of learning and I will deliberately put you in these
   situations. I expect you to use available resources to solve problems and ask
-  me only as a last resort.
+  me only once you've attempted to solve the problem yourself. This benefits the
+  both of us.
 
 And lastly, I will repeat: **do not be afraid to ask questions**! Interrupt me,
 please. You may have heard this several times before but I'll repeat it again:

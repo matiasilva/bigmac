@@ -18,3 +18,8 @@ will be and the more you will gain from the course.
 
 No machine learning or SystemVerilog knowledge is required, learning material
 will be provided.
+
+For getting to speed with SystemVerilog, I recommend:
+
+- [This excellent primer by DJ Greaves from the Cambridge University CS dept](https://www.cl.cam.ac.uk/~djg11/teaching/learners.pdf).
+- [This more thorough slide set from Dan Gisselquist over at ZipCPU](https://zipcpu.com/tutorial/).

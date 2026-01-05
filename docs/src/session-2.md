@@ -191,8 +191,8 @@ flops are so common that we simply refer to them as 'flops'.
 
 ## Waveforms
 
-One way to visualize sequential logic circuits is with waveform diagrams, as
-below.
+One way to visualize sequential logic circuits is with waveform diagrams, also
+known as digital timing diagrams, as below.
 
 <p style="text-align:center"><img src="s2-c2.svg"></p>
 

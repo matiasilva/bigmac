@@ -264,6 +264,11 @@ hear references to Verilog 2001 compatible code, since it's pretty much
 guaranteed to work with all EDA tools. This refers to the subset of
 SystemVerilog features available in the IEEE Standard 1364-2001.
 
+In this course, we'll be using SystemVerilog (2012 version) since it's what
+companies actually use. It's still important for you to know what is and isn't
+SystemVerilog since you'll occasionally have to do some archaeology and dig into
+some ancient code.
+
 > [!TIP]
 >
 > Why are some features of SystemVerilog not available or implemented by all
