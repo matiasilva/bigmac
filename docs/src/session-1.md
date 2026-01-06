@@ -421,6 +421,9 @@ off.
    export PATH="/opt/edatools/oss-cad-suite/bin:$PATH"
    ```
 
+   You are encouraged to add this your `.bashrc` file so the `PATH` is properly
+   set up in every shell.
+
 2. Setting up VNC:
 
    ```bash

@@ -160,6 +160,18 @@ are implemented will vary depending on the platform (ASIC or FPGA).
 > that you might build out of gates, to the HDL code you write and so on. It's a
 > general term for _the thing that your circuit will do_.
 
+### Karnaugh Maps
+
+A word on Karnaugh maps...While the use of K-maps has mostly been relegated to
+the classroom and rarely appears in the real-world, it's an invaluable tool for
+building intuition on logic reduction.
+
+The main objective is to find the simplest circuit that can model our logic
+problem. It follows thus that the best solution has the fewest variables in the
+fewest terms. Recall that a K-map solution can be of the sum-of-products form or
+product-of-sum form, with the former involving collecting the largest groups of
+minterms and the latter the maxterms.
+
 ## Sequential logic
 
 So far, we've seen that we can evaluate arbitrary boolean functions using logic
