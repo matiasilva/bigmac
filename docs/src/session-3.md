@@ -203,7 +203,7 @@ Valid solutions must be fully justified.
 
 ---
 
-2. This question is about Boolean expressions and Karnaugh maps
+1. This question is about Boolean expressions and Karnaugh maps
 
 Consider the design of a warning light system that alerts a car user to check
 their engine. The design requirement is as follows:
@@ -220,7 +220,7 @@ A warning light should turn on when:
 
 ---
 
-3. This question is about SystemVerilog.
+1. This question is about SystemVerilog.
 
 You are tasked with designing a 4-bit counter that can count up or down,
 controlled by two corresponding inputs. You should use the skeleton below to
@@ -246,7 +246,7 @@ endmodule
 
 ---
 
-4. This question is about synchronous circuit design.
+1. This question is about synchronous circuit design.
 
 > [!NOTE]
 >
@@ -287,3 +287,46 @@ inputs to the T-flops are determined by the state.
 [^1]:
     Register Transfer Level, just refers to the HDL we write with an emphasis
     that we are working at a level of abstraction above the logic gate level
+
+---
+
+1. This question is about writing RTL.
+
+You are tasked with designing a chip that will manage a traffic light
+controller. The requirements are as follows:
+
+1. There are three lights to be displayed, and therefore three output signals:
+   red, amber and green.
+2. To ensure the smooth flow of traffic, the light should always be green by
+   default.
+3. If a pedestrian request (input high for 1 cycle for 1 request) is registered,
+   the lights should switch to amber for 3 seconds followed by red for 10
+   seconds. Further requests during this time are ignored.
+4. Once a pedestrian request has been honored, both the amber and red lights
+   illuminate for 3 seconds then switch to green.
+5. Pedestrian requests are only valid if received when the green light is on.
+
+_Challenge requirement_: There is a cool down period of 10s after the lights
+have switched to green during which no pedestrian requests can be received to
+ensure the smooth flow of traffic.
+
+Assume all signals are properly debounced before they are connected to your
+block.
+
+Your task:
+
+1. Draw a state diagram for this task, thinking carefully about how many states
+   you need to implement the controller
+2. Write RTL for a simple downcounter, you will use this to time transitions
+   between the states
+3. Implement the traffic light controller
+4. Write a testbench for your controller, verifying that all states transition
+   per the requirements
+
+Hints:
+
+- Think about how you will incorporate the downcounter to help you transition
+  between states
+- Make sure to use a SystemVerilog typedef'd enum for your states
+- Use intermediate signals to help you debug your state machine and for code
+  clarity
